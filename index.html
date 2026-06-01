@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GWA Calculator Philippines 2026 — Free General Weighted Average Tool (UP, PUP, UST, DLSU)</title>
+<meta name="description" content="Free GWA Calculator for Philippine college and senior high school students. Compute your General Weighted Average instantly on the 1.00–5.00 scale. Supports UP, PUP, UST, DLSU, FEU, NU, Mapúa and 30+ universities. Semester &amp; cumulative GWA, Latin honors detection, GPA &amp; percentage conversion. No sign-up, 100% free.">
+<meta name="keywords" content="gwa calculator, gwa calculator philippines, how to compute gwa, general weighted average calculator, up gwa calculator, pup gwa calculator, ust gwa calculator, dlsu gpa calculator, cumulative gwa, latin honors, dean's list gwa, gwa to gpa, senior high school gwa">
+<meta name="author" content="GWA Calculator Philippines">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://YOUR-USERNAME.github.io/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="GWA Calculator Philippines 2026 — Free General Weighted Average Tool">
+<meta property="og:description" content="Compute your GWA instantly on the 1.00–5.00 scale. Supports 30+ Philippine universities, Latin honors detection, GPA &amp; percentage conversion. No sign-up, 100% free.">
+<meta property="og:locale" content="en_PH">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GWA Calculator Philippines 2026">
+<meta name="twitter:description" content="Free General Weighted Average calculator for Filipino students. UP, PUP, UST, DLSU and 30+ schools.">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+
+<!-- Schema.org: WebApplication -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GWA Calculator Philippines",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any (Web)",
+  "description": "Free General Weighted Average calculator for Philippine college and senior high school students. Supports 30+ universities, Latin honors detection and GPA conversion.",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "PHP" },
+  "inLanguage": "en-PH"
+}
+</script>
+
+<!-- Schema.org: FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you compute GWA in the Philippines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GWA is computed by multiplying each subject's final grade by its credit units, summing all the products, then dividing by the total number of units. The formula is GWA = Sum of (Grade × Units) ÷ Total Units."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What GWA is needed for Cum Laude in the Philippines?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "At most Philippine universities, Cum Laude requires a cumulative GWA of 1.46 to 1.75, Magna Cum Laude requires 1.21 to 1.45, and Summa Cum Laude requires 1.00 to 1.20, all with no failing grades."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 1.75 GWA good?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A 1.75 GWA (about 87–88%) is the standard Cum Laude and Dean's List threshold at most Philippine universities and qualifies for most scholarships such as DOST and CHED."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the passing GWA in college?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A grade of 3.00 is the minimum passing grade at most Philippine universities on the 1.00–5.00 scale. A grade of 5.00 is failing. Remember the scale is inverted: 1.00 is the highest grade."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Schema.org: HowTo -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Compute Your GWA",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Enter subjects", "text": "Type each subject name, its final grade, and its number of units." },
+    { "@type": "HowToStep", "position": 2, "name": "Multiply grade by units", "text": "Each subject's grade is multiplied by its credit units to get weighted grade points." },
+    { "@type": "HowToStep", "position": 3, "name": "Sum and divide", "text": "Add all weighted grade points and divide by the total number of units." },
+    { "@type": "HowToStep", "position": 4, "name": "Read your result", "text": "The result is your GWA along with its percentage, GPA equivalent and honors status." }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --bg:#0f1419;
+    --surface:#171e26;
+    --surface-2:#1e2832;
+    --border:#2a3744;
+    --ink:#e8edf2;
+    --ink-soft:#9fb0bf;
+    --ink-faint:#67788a;
+    --accent:#ffb703;
+    --accent-2:#fb8500;
+    --good:#3ddc97;
+    --good-bg:rgba(61,220,151,.12);
+    --warn:#ffd166;
+    --bad:#ef476f;
+    --bad-bg:rgba(239,71,111,.12);
+    --blue:#4cc9f0;
+    --radius:16px;
+    --radius-sm:10px;
+    --shadow:0 8px 30px rgba(0,0,0,.35);
+    --maxw:880px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Manrope',-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(800px 400px at 80% -5%, rgba(255,183,3,.10), transparent 60%),
+      radial-gradient(600px 500px at -10% 10%, rgba(76,201,240,.07), transparent 55%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 18px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* ---- Header ---- */
+  header.site{padding:28px 0 8px;text-align:center}
+  .badge-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+  .pill{
+    font-size:12px;font-weight:600;color:var(--ink-soft);
+    background:var(--surface-2);border:1px solid var(--border);
+    padding:5px 12px;border-radius:999px;
+  }
+  .pill .dot{color:var(--good)}
+  h1{
+    font-family:'Fraunces',serif;font-weight:600;
+    font-size:clamp(30px,6vw,48px);line-height:1.08;
+    letter-spacing:-.02em;margin-bottom:14px;
+  }
+  h1 .hl{color:var(--accent);font-style:italic}
+  .sub{color:var(--ink-soft);font-size:clamp(15px,2.5vw,18px);max-width:640px;margin:0 auto}
+
+  /* ---- Card ---- */
+  .card{
+    background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);box-shadow:var(--shadow);
+    padding:22px;margin:24px 0;
+  }
+  .card h2{
+    font-family:'Fraunces',serif;font-weight:600;font-size:24px;
+    letter-spacing:-.01em;margin-bottom:4px;
+  }
+  .card .lead{color:var(--ink-soft);font-size:14px;margin-bottom:18px}
+
+  /* ---- Mode tabs ---- */
+  .tabs{display:flex;gap:6px;background:var(--bg);border:1px solid var(--border);
+    border-radius:var(--radius-sm);padding:5px;margin-bottom:18px;flex-wrap:wrap}
+  .tab{
+    flex:1;min-width:120px;text-align:center;padding:9px 10px;border-radius:7px;
+    font-weight:600;font-size:13px;color:var(--ink-soft);cursor:pointer;
+    border:none;background:transparent;transition:.15s;
+  }
+  .tab.active{background:var(--accent);color:#0f1419}
+
+  /* ---- School select ---- */
+  .field-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+  .field{flex:1;min-width:200px}
+  label.fl{display:block;font-size:12px;font-weight:600;color:var(--ink-soft);
+    margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+  select,input[type=text],input[type=number]{
+    width:100%;padding:11px 12px;background:var(--bg);border:1px solid var(--border);
+    border-radius:var(--radius-sm);color:var(--ink);font-family:inherit;font-size:14px;
+    transition:border-color .15s;
+  }
+  select:focus,input:focus{outline:none;border-color:var(--accent)}
+  .hint{font-size:12px;color:var(--ink-faint);margin-top:6px}
+
+  /* ---- Subject rows ---- */
+  .subjects{margin-bottom:6px}
+  .srow{display:grid;grid-template-columns:1fr 90px 80px 36px;gap:8px;margin-bottom:8px;align-items:center}
+  .srow input{padding:10px}
+  .srow .del{
+    background:var(--bad-bg);border:1px solid transparent;color:var(--bad);
+    border-radius:8px;height:40px;cursor:pointer;font-size:18px;line-height:1;
+    transition:.15s;
+  }
+  .srow .del:hover{background:var(--bad);color:#fff}
+  .col-head{display:grid;grid-template-columns:1fr 90px 80px 36px;gap:8px;margin-bottom:8px}
+  .col-head span{font-size:11px;font-weight:700;color:var(--ink-faint);
+    text-transform:uppercase;letter-spacing:.05em}
+
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .btn{
+    font-family:inherit;font-weight:700;font-size:14px;padding:12px 20px;border-radius:var(--radius-sm);
+    cursor:pointer;border:1px solid transparent;transition:.15s;
+  }
+  .btn-primary{background:var(--accent);color:#0f1419;flex:1;min-width:160px}
+  .btn-primary:hover{background:var(--accent-2)}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--ink-soft)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---- Result ---- */
+  .result{display:none;margin-top:22px;padding-top:22px;border-top:1px dashed var(--border)}
+  .result.show{display:block;animation:fade .4s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .gwa-big{text-align:center;margin-bottom:18px}
+  .gwa-big .num{font-family:'Fraunces',serif;font-size:64px;font-weight:700;line-height:1;color:var(--accent)}
+  .gwa-big .lbl{font-size:13px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.08em;margin-top:6px}
+  .honor{display:inline-block;margin-top:12px;padding:8px 18px;border-radius:999px;font-weight:700;font-size:14px}
+  .honor.good{background:var(--good-bg);color:var(--good);border:1px solid rgba(61,220,151,.3)}
+  .honor.warn{background:rgba(255,209,102,.12);color:var(--warn);border:1px solid rgba(255,209,102,.3)}
+  .honor.bad{background:var(--bad-bg);color:var(--bad);border:1px solid rgba(239,71,111,.3)}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px}
+  .stat{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 10px;text-align:center}
+  .stat .v{font-size:22px;font-weight:800;color:var(--ink)}
+  .stat .k{font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+
+  /* ---- What-if ---- */
+  .whatif-out{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);
+    padding:16px;margin-top:14px;display:none}
+  .whatif-out.show{display:block}
+  .whatif-out .big{font-family:'Fraunces',serif;font-size:38px;font-weight:700;color:var(--blue)}
+
+  /* ---- Content sections ---- */
+  section.content{margin:46px 0}
+  section.content h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(24px,4vw,32px);
+    letter-spacing:-.01em;margin-bottom:8px;scroll-margin-top:20px}
+  section.content h3{font-family:'Fraunces',serif;font-weight:600;font-size:20px;margin:22px 0 8px}
+  section.content p{color:var(--ink-soft);margin-bottom:14px;font-size:15.5px}
+  section.content ul{color:var(--ink-soft);margin:0 0 14px 20px;font-size:15.5px}
+  section.content li{margin-bottom:6px}
+  .formula{background:var(--surface-2);border:1px solid var(--border);border-left:3px solid var(--accent);
+    border-radius:var(--radius-sm);padding:16px 18px;margin:16px 0;font-size:16px;color:var(--ink)}
+  .formula code{font-family:'Fraunces',serif;font-style:italic;color:var(--accent);font-size:18px}
+
+  table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px;
+    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+  th{background:var(--surface-2);color:var(--ink);text-align:left;padding:10px 12px;font-weight:700;font-size:13px}
+  td{padding:10px 12px;border-top:1px solid var(--border);color:var(--ink-soft)}
+  tr:hover td{background:var(--bg)}
+  td strong{color:var(--ink)}
+
+  /* ---- FAQ ---- */
+  details{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);
+    margin-bottom:10px;overflow:hidden}
+  summary{padding:15px 18px;font-weight:600;cursor:pointer;font-size:15px;list-style:none;
+    display:flex;justify-content:space-between;align-items:center}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:'+';font-size:22px;color:var(--accent);font-weight:400}
+  details[open] summary::after{content:'–'}
+  details .body{padding:0 18px 16px;color:var(--ink-soft);font-size:14.5px}
+
+  /* ---- TOC ---- */
+  .toc{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+  .toc a{font-size:13px;font-weight:600;background:var(--surface);border:1px solid var(--border);
+    color:var(--ink-soft);padding:7px 14px;border-radius:999px}
+  .toc a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+
+  /* ---- Footer ---- */
+  footer{border-top:1px solid var(--border);margin-top:50px;padding:28px 0 40px;text-align:center;
+    color:var(--ink-faint);font-size:13px}
+  footer p{margin-bottom:6px}
+
+  .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(100px);
+    background:var(--good);color:#0f1419;font-weight:700;padding:12px 22px;border-radius:999px;
+    transition:.3s;z-index:99;font-size:14px}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+
+  .err{color:var(--bad);font-size:13px;margin-top:8px;font-weight:600;display:none}
+  .err.show{display:block}
+
+  @media(max-width:560px){
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .gwa-big .num{font-size:52px}
+    .srow,.col-head{grid-template-columns:1fr 70px 60px 32px}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <div class="badge-row">
+      <span class="pill"><span class="dot">●</span> 100% Free</span>
+      <span class="pill"><span class="dot">●</span> No Sign-up</span>
+      <span class="pill"><span class="dot">●</span> 30+ Universities</span>
+      <span class="pill"><span class="dot">●</span> 2026 Updated</span>
+    </div>
+    <h1>GWA Calculator <span class="hl">Philippines</span></h1>
+    <p class="sub">Compute your General Weighted Average instantly on the 1.00–5.00 scale. Works for college &amp; senior high school. Get your GPA, percentage, letter grade and Latin honors status — all in one click.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ CALCULATOR ============ -->
+  <div class="card" id="calc">
+    <h2>Calculate Your GWA</h2>
+    <p class="lead">Enter your subjects, grades and units. Choose your mode below.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-mode="semester">Semester GWA</button>
+      <button class="tab" data-mode="cumulative">Cumulative GWA</button>
+      <button class="tab" data-mode="whatif">What-If Simulator</button>
+    </div>
+
+    <div class="field-row">
+      <div class="field">
+        <label class="fl" for="school">University / School System</label>
+        <select id="school"></select>
+        <div class="hint" id="schoolHint">Standard Philippine 1.00–5.00 scale. 1.00 = highest, 5.00 = failing.</div>
+      </div>
+    </div>
+
+    <!-- SEMESTER / CUMULATIVE -->
+    <div id="panelSubjects">
+      <div class="col-head">
+        <span>Subject</span><span>Grade</span><span>Units</span><span></span>
+      </div>
+      <div class="subjects" id="subjects"></div>
+      <div class="err" id="errBox">Please enter at least one valid grade and unit value.</div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" id="addRow">+ Add Subject</button>
+        <button class="btn btn-ghost" id="loadSample">Load Sample</button>
+        <button class="btn btn-primary" id="calcBtn">Calculate GWA</button>
+      </div>
+
+      <div class="result" id="result">
+        <div class="gwa-big">
+          <div class="num" id="gwaNum">—</div>
+          <div class="lbl" id="gwaModeLbl">Semester GWA</div>
+          <div id="honorWrap"></div>
+        </div>
+        <div class="stats">
+          <div class="stat"><div class="v" id="sPct">—</div><div class="k">Percentage</div></div>
+          <div class="stat"><div class="v" id="sGpa">—</div><div class="k">GPA (4.0)</div></div>
+          <div class="stat"><div class="v" id="sLetter">—</div><div class="k">Letter</div></div>
+          <div class="stat"><div class="v" id="sUnits">—</div><div class="k">Total Units</div></div>
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-ghost" id="csvBtn">⤓ Download CSV</button>
+          <button class="btn btn-ghost" id="copyBtn">⧉ Copy Result</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHAT-IF -->
+    <div id="panelWhatif" style="display:none">
+      <div class="field-row">
+        <div class="field">
+          <label class="fl" for="wfCurrent">Current Cumulative GWA</label>
+          <input type="number" id="wfCurrent" step="0.001" min="1" max="5" placeholder="e.g. 1.85">
+        </div>
+        <div class="field">
+          <label class="fl" for="wfUnitsDone">Units Completed So Far</label>
+          <input type="number" id="wfUnitsDone" min="1" placeholder="e.g. 90">
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label class="fl" for="wfTarget">Target GWA</label>
+          <input type="number" id="wfTarget" step="0.001" min="1" max="5" placeholder="e.g. 1.75">
+        </div>
+        <div class="field">
+          <label class="fl" for="wfUnitsLeft">Remaining Units</label>
+          <input type="number" id="wfUnitsLeft" min="1" placeholder="e.g. 30">
+        </div>
+      </div>
+      <div class="err" id="wfErr">Please fill in all four fields with valid numbers.</div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="wfBtn">Simulate</button>
+      </div>
+      <div class="whatif-out" id="wfOut">
+        <div style="font-size:13px;color:var(--ink-soft);margin-bottom:4px">You need an average grade of</div>
+        <div class="big" id="wfResult">—</div>
+        <div id="wfVerdict" style="margin-top:8px;font-weight:600"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ TABLE OF CONTENTS ============ -->
+  <div class="toc">
+    <a href="#how">How to Compute GWA</a>
+    <a href="#formula">The Formula</a>
+    <a href="#scale">Grade Scale</a>
+    <a href="#honors">Latin Honors</a>
+    <a href="#schools">By University</a>
+    <a href="#faq">FAQ</a>
+  </div>
+
+  <!-- ============ CONTENT: HOW TO ============ -->
+  <section class="content" id="how">
+    <h2>How to Compute Your GWA in the Philippines</h2>
+    <p>Your <strong>General Weighted Average (GWA)</strong> is the single most important number on your transcript. It decides whether you qualify for Latin honors, keep your scholarship, get into graduate school, or meet an employer's cut-off. Computing it is simple once you understand that it is a <em>weighted</em> average — subjects with more units count more.</p>
+
+    <h3>Step by step</h3>
+    <ul>
+      <li><strong>Step 1 — List your subjects.</strong> Write down each subject, its final grade, and the number of credit units.</li>
+      <li><strong>Step 2 — Multiply grade by units.</strong> For every subject, multiply the final grade by its units. This gives the "weighted grade points."</li>
+      <li><strong>Step 3 — Add everything up.</strong> Sum all the weighted grade points, and separately sum all the units.</li>
+      <li><strong>Step 4 — Divide.</strong> Divide the total weighted grade points by the total units. That is your GWA.</li>
+    </ul>
+    <p>The calculator above does all of this instantly — but knowing the manual method helps you double-check and understand <em>why</em> a heavy major subject affects your average more than a 1-unit elective.</p>
+  </section>
+
+  <!-- ============ CONTENT: FORMULA ============ -->
+  <section class="content" id="formula">
+    <h2>The GWA Formula</h2>
+    <div class="formula">
+      <code>GWA = Σ (Grade × Units) ÷ Σ (Total Units)</code>
+    </div>
+    <p>In words: multiply each subject's grade by its units, add all those products together, then divide by the total number of units you carried that term.</p>
+
+    <h3>Worked example</h3>
+    <table>
+      <thead><tr><th>Subject</th><th>Grade</th><th>Units</th><th>Grade × Units</th></tr></thead>
+      <tbody>
+        <tr><td>Calculus</td><td>1.50</td><td>5</td><td>7.50</td></tr>
+        <tr><td>Physics</td><td>1.75</td><td>4</td><td>7.00</td></tr>
+        <tr><td>English</td><td>2.00</td><td>3</td><td>6.00</td></tr>
+        <tr><td>Filipino</td><td>1.25</td><td>3</td><td>3.75</td></tr>
+        <tr><td><strong>Total</strong></td><td>—</td><td><strong>15</strong></td><td><strong>24.25</strong></td></tr>
+      </tbody>
+    </table>
+    <p>GWA = 24.25 ÷ 15 = <strong>1.62</strong> — which falls in the Cum Laude range at most Philippine universities.</p>
+  </section>
+
+  <!-- ============ CONTENT: SCALE ============ -->
+  <section class="content" id="scale">
+    <h2>Philippine Grade Scale (1.00–5.00)</h2>
+    <p>The Philippine college scale is <strong>inverted</strong> compared to the US GPA scale: a lower number is better. A 1.00 is a perfect grade, while a 5.00 is failing. This is the opposite of the American 4.0 system, where 4.0 is best.</p>
+    <table>
+      <thead><tr><th>Grade</th><th>Percentage</th><th>Description</th><th>Honors</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1.00</strong></td><td>99–100%</td><td>Excellent</td><td>Summa range</td></tr>
+        <tr><td><strong>1.25</strong></td><td>96–98%</td><td>Excellent</td><td>Magna range</td></tr>
+        <tr><td><strong>1.50</strong></td><td>93–95%</td><td>Very Good</td><td>Magna range</td></tr>
+        <tr><td><strong>1.75</strong></td><td>87–92%</td><td>Very Good</td><td>Cum Laude / Dean's List</td></tr>
+        <tr><td><strong>2.00</strong></td><td>83–86%</td><td>Good</td><td>—</td></tr>
+        <tr><td><strong>2.50</strong></td><td>77–82%</td><td>Satisfactory</td><td>—</td></tr>
+        <tr><td><strong>3.00</strong></td><td>75–76%</td><td>Passing</td><td>Minimum to pass</td></tr>
+        <tr><td><strong>4.00</strong></td><td>—</td><td>Conditional</td><td>Removal exam needed</td></tr>
+        <tr><td><strong>5.00</strong></td><td>Below 75%</td><td>Failed</td><td>Retake required</td></tr>
+      </tbody>
+    </table>
+    <p class="hint" style="font-size:13px">Note: exact percentage bands vary slightly by university. DLSU and Ateneo use a 4.0 ascending scale and letter grades; senior high school under DepEd uses a 75% passing percentage system.</p>
+  </section>
+
+  <!-- ============ CONTENT: HONORS ============ -->
+  <section class="content" id="honors">
+    <h2>Latin Honors &amp; Dean's List GWA Requirements</h2>
+    <p>Latin honors are awarded at graduation based on your <strong>cumulative</strong> GWA across your entire degree, while the Dean's List is awarded per semester. Most schools also require no failing grades, no unresolved INC, and no major disciplinary record.</p>
+    <table>
+      <thead><tr><th>Honor</th><th>Cumulative GWA</th><th>Approx. %</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Summa Cum Laude</strong></td><td>1.00 – 1.20</td><td>96–100%</td></tr>
+        <tr><td><strong>Magna Cum Laude</strong></td><td>1.21 – 1.45</td><td>93–95%</td></tr>
+        <tr><td><strong>Cum Laude</strong></td><td>1.46 – 1.75</td><td>87–92%</td></tr>
+        <tr><td><strong>Dean's List</strong> (per sem)</td><td>1.75 or better</td><td>87%+</td></tr>
+      </tbody>
+    </table>
+    <p>At the <strong>University of the Philippines</strong>, the equivalent recognitions are <em>University Scholar</em> (semester GWA of 1.45 or better) and <em>College Scholar</em> (1.75 or better), each requiring no grade below 3.00 and no INC.</p>
+  </section>
+
+  <!-- ============ CONTENT: SCHOOLS ============ -->
+  <section class="content" id="schools">
+    <h2>GWA by University</h2>
+    <p>Most Philippine universities — including <strong>UP, PUP, UST, FEU, NU and Mapúa</strong> — use the standard 1.00–5.00 scale, so the same formula applies. A few important exceptions:</p>
+    <ul>
+      <li><strong>UP (University of the Philippines):</strong> uses 4.00 as a conditional pass and DRP for dropped subjects (excluded from GWA). Recognition is University Scholar / College Scholar, not Dean's List.</li>
+      <li><strong>DLSU (De La Salle University):</strong> uses a 4.0 <em>ascending</em> scale where 4.0 is the highest. A generic 1.00–5.00 calculator will give the wrong result — select DLSU above to use the correct scale.</li>
+      <li><strong>Ateneo (ADMU):</strong> uses letter grades (A, B+, B, C+, C, F) that map to a 4.0 quality-point system.</li>
+      <li><strong>UST (University of Santo Tomas):</strong> grades internally in percentage but reports on the 1.00–5.00 scale.</li>
+      <li><strong>Mapúa &amp; TIP:</strong> use QPI (Quality Point Index) on a 0–4 ascending scale.</li>
+      <li><strong>Senior High School (DepEd):</strong> uses a percentage system where 75% is passing — completely different from college.</li>
+    </ul>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="content" id="faq">
+    <h2>Frequently Asked Questions</h2>
+
+    <details><summary>How do you compute GWA in the Philippines?</summary>
+      <div class="body">Multiply each subject's final grade by its credit units, add all the products together, then divide by the total number of units. The formula is GWA = Σ(Grade × Units) ÷ Σ(Units).</div></details>
+
+    <details><summary>What GWA is needed for Cum Laude?</summary>
+      <div class="body">At most Philippine universities Cum Laude requires a cumulative GWA of 1.46–1.75, Magna Cum Laude 1.21–1.45, and Summa Cum Laude 1.00–1.20 — all with zero failing grades anywhere in your record.</div></details>
+
+    <details><summary>Is a 1.75 GWA good?</summary>
+      <div class="body">Yes. A 1.75 GWA (around 87–88%) is the standard Cum Laude and Dean's List threshold and qualifies for most scholarships such as DOST-SEI and CHED.</div></details>
+
+    <details><summary>What is the passing GWA in college?</summary>
+      <div class="body">A grade of 3.00 is the minimum passing grade on the 1.00–5.00 scale. A 4.00 is a conditional pass (requires a removal exam) and a 5.00 is failing.</div></details>
+
+    <details><summary>Is GWA the same as GPA?</summary>
+      <div class="body">No. GWA uses the inverted 1.00–5.00 Philippine scale (1.00 is best). GPA uses the 4.0 US scale (4.0 is best). This calculator converts between them automatically.</div></details>
+
+    <details><summary>Can senior high school students use this?</summary>
+      <div class="body">Yes — choose "Senior High School (DepEd)" in the school dropdown to compute using the percentage-based DepEd system instead of the college 1.00–5.00 scale.</div></details>
+
+    <details><summary>How do I compute my cumulative GWA?</summary>
+      <div class="body">You cannot simply average your semester GWAs. Use the "Cumulative GWA" tab and enter every subject (or every semester's totals) with its units, because longer/heavier semesters carry more weight.</div></details>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>GWA Calculator Philippines</strong> — free for every Filipino student.</p>
+    <p>Educational tool. Always confirm exact grading rules and honor thresholds with your own school's registrar.</p>
+    <p style="margin-top:10px;color:var(--ink-faint)">Built with care · Updated 2026</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+/* ============================================================
+   GWA Calculator Philippines — app.js
+   ============================================================ */
+(function(){
+  'use strict';
+
+  /* ---------- School / scale definitions ---------- */
+  // type: 'std' = 1.00–5.00 descending; 'dlsu' = 4.0 ascending; 'qpi' = 0-4 ascending; 'deped' = percentage
+  const SCHOOLS = [
+    {id:'std',   name:'Standard 1.00–5.00 (UP, PUP, UST, FEU, NU, most schools)', type:'std',
+     hint:'Standard Philippine 1.00–5.00 scale. 1.00 = highest, 5.00 = failing.'},
+    {id:'up',    name:'University of the Philippines (UP)', type:'std',
+     hint:'UP uses 1.00–5.00. 4.00 = conditional pass, DRP = excluded. University Scholar 1.45 / College Scholar 1.75.'},
+    {id:'pup',   name:'Polytechnic University of the Philippines (PUP)', type:'std',
+     hint:'PUP uses the standard 1.00–5.00 scale. Dean\u2019s List 1.75, President\u2019s Lister ~1.50.'},
+    {id:'ust',   name:'University of Santo Tomas (UST)', type:'std',
+     hint:'UST grades in percentage internally but reports on the 1.00–5.00 scale.'},
+    {id:'feu',   name:'Far Eastern University (FEU)', type:'std', hint:'FEU uses the standard CHED 1.00–5.00 scale.'},
+    {id:'nu',    name:'National University (NU)', type:'std', hint:'NU uses 1.00–5.00. Dean\u2019s List at 1.75.'},
+    {id:'dlsu',  name:'De La Salle University (DLSU) — 4.0 scale', type:'dlsu',
+     hint:'DLSU uses a 4.0 ASCENDING scale where 4.0 is highest. Enter grades on the 0–4.0 scale.'},
+    {id:'admu',  name:'Ateneo de Manila (ADMU) — 4.0 scale', type:'dlsu',
+     hint:'Ateneo uses a 4.0 ascending quality-point scale (A=4.0). Enter the numeric QPI value.'},
+    {id:'mapua', name:'Mapúa University — QPI (0–4)', type:'qpi',
+     hint:'Mapúa uses QPI on a 0–4 ascending scale. Enter your QPI grade per subject.'},
+    {id:'deped', name:'Senior High School (DepEd) — Percentage', type:'deped',
+     hint:'DepEd K-12 uses a percentage system (75% passing). Enter grades as percentages (e.g. 90).'}
+  ];
+
+  /* ---------- Validation ranges per type ---------- */
+  function gradeBounds(type){
+    if(type==='std')   return {min:1.0, max:5.0};
+    if(type==='dlsu' || type==='qpi') return {min:0.0, max:4.0};
+    if(type==='deped') return {min:60, max:100};
+    return {min:1.0, max:5.0};
+  }
+
+  /* ---------- Conversions (from std 1.00–5.00) ---------- */
+  function stdToPercent(g){
+    // piecewise linear approximation common in PH
+    if(g<=1.00) return 99;
+    if(g>=5.00) return 65;
+    // 1.00->99, 1.75->88, 2.00->85, 3.00->75, 5.00->65
+    const pts=[[1.00,99],[1.25,96],[1.50,93],[1.75,88],[2.00,85],[2.25,81],[2.50,79],[2.75,77],[3.00,75],[5.00,65]];
+    for(let i=0;i<pts.length-1;i++){
+      const [g1,p1]=pts[i],[g2,p2]=pts[i+1];
+      if(g>=g1 && g<=g2){
+        const t=(g-g1)/(g2-g1);
+        return Math.round(p1+(p2-p1)*t);
+      }
+    }
+    return 75;
+  }
+  function stdToGpa(g){
+    // approximate: GPA = 5 - GWA, clamped to 0–4
+    let gpa = 5 - g;
+    if(gpa>4) gpa=4; if(gpa<0) gpa=0;
+    return gpa.toFixed(2);
+  }
+  function stdToLetter(g){
+    if(g<=1.00) return 'A+';
+    if(g<=1.25) return 'A';
+    if(g<=1.50) return 'A-';
+    if(g<=1.75) return 'B+';
+    if(g<=2.00) return 'B';
+    if(g<=2.50) return 'B-';
+    if(g<=3.00) return 'C';
+    if(g<=4.00) return 'D';
+    return 'F';
+  }
+
+  // Convert any-scale grade INTO standard 1.00–5.00 for unified honor logic
+  function toStd(grade, type){
+    if(type==='std') return grade;
+    if(type==='dlsu' || type==='qpi'){
+      // 4.0 ascending -> 1.00-5.00 descending (approx): std = 5 - (grade * 1)  ... map 4.0->1.0, 0->5.0
+      let s = 5 - grade;
+      if(s<1) s=1; if(s>5) s=5;
+      return s;
+    }
+    if(type==='deped'){
+      // percentage -> std approx: 100->1.0, 75->3.0, <75->5
+      if(grade>=98) return 1.0;
+      if(grade<75)  return 5.0;
+      // 98->1.0, 75->3.0 linear
+      const s = 1.0 + (98-grade)/(98-75)*(3.0-1.0);
+      return Math.max(1.0,Math.min(5.0,s));
+    }
+    return grade;
+  }
+
+  function honorFor(gwaStd, schoolId){
+    // returns {label, cls}
+    if(schoolId==='up'){
+      if(gwaStd<=1.45) return {label:'University Scholar', cls:'good'};
+      if(gwaStd<=1.75) return {label:'College Scholar', cls:'good'};
+      if(gwaStd<=3.00) return {label:'Passing', cls:'warn'};
+      return {label:'Below Passing', cls:'bad'};
+    }
+    if(gwaStd<=1.20) return {label:'Summa Cum Laude range', cls:'good'};
+    if(gwaStd<=1.45) return {label:'Magna Cum Laude range', cls:'good'};
+    if(gwaStd<=1.75) return {label:'Cum Laude / Dean\u2019s List', cls:'good'};
+    if(gwaStd<=2.00) return {label:'Good standing', cls:'warn'};
+    if(gwaStd<=3.00) return {label:'Passing', cls:'warn'};
+    return {label:'Below passing', cls:'bad'};
+  }
+
+  /* ---------- DOM ---------- */
+  const $ = s => document.querySelector(s);
+  const $$ = s => document.querySelectorAll(s);
+
+  const schoolSel = $('#school');
+  const schoolHint = $('#schoolHint');
+  const subjectsBox = $('#subjects');
+  const result = $('#result');
+  let mode = 'semester';
+
+  // populate schools
+  SCHOOLS.forEach(s=>{
+    const o=document.createElement('option');
+    o.value=s.id; o.textContent=s.name;
+    schoolSel.appendChild(o);
+  });
+  function curSchool(){ return SCHOOLS.find(s=>s.id===schoolSel.value)||SCHOOLS[0]; }
+  schoolSel.addEventListener('change', ()=>{ schoolHint.textContent=curSchool().hint; });
+
+  /* ---------- Subject rows ---------- */
+  function addRow(name='',grade='',units=''){
+    const row=document.createElement('div');
+    row.className='srow';
+    row.innerHTML =
+      '<input type="text" class="s-name" placeholder="Subject name" value="'+name+'">'+
+      '<input type="number" class="s-grade" step="0.01" placeholder="Grade" value="'+grade+'">'+
+      '<input type="number" class="s-units" step="0.5" min="0" placeholder="Units" value="'+units+'">'+
+      '<button class="del" title="Remove" aria-label="Remove subject">×</button>';
+    row.querySelector('.del').addEventListener('click',()=>{
+      if(subjectsBox.children.length>1) row.remove();
+    });
+    subjectsBox.appendChild(row);
+  }
+  // start with 3 rows
+  addRow(); addRow(); addRow();
+
+  $('#addRow').addEventListener('click',()=>addRow());
+
+  $('#loadSample').addEventListener('click',()=>{
+    subjectsBox.innerHTML='';
+    const t=curSchool().type;
+    if(t==='deped'){
+      addRow('Mathematics','92','1');addRow('Science','88','1');
+      addRow('English','90','1');addRow('Filipino','94','1');
+    } else if(t==='dlsu'||t==='qpi'){
+      addRow('Calculus','3.5','5');addRow('Physics','3.0','4');
+      addRow('English','4.0','3');addRow('Filipino','3.5','3');
+    } else {
+      addRow('Calculus','1.50','5');addRow('Physics','1.75','4');
+      addRow('English','2.00','3');addRow('Filipino','1.25','3');
+    }
+  });
+
+  /* ---------- Calculate ---------- */
+  let lastResult=null;
+
+  $('#calcBtn').addEventListener('click',()=>{
+    const sch=curSchool();
+    const b=gradeBounds(sch.type);
+    const rows=$$('#subjects .srow');
+    let totalWeighted=0, totalUnits=0, valid=0;
+    const records=[];
+    rows.forEach(r=>{
+      const name=r.querySelector('.s-name').value.trim()||'Subject';
+      const g=parseFloat(r.querySelector('.s-grade').value);
+      const u=parseFloat(r.querySelector('.s-units').value);
+      if(!isNaN(g)&&!isNaN(u)&&u>0&&g>=b.min&&g<=b.max){
+        totalWeighted+=g*u; totalUnits+=u; valid++;
+        records.push({name,g,u});
+      }
+    });
+
+    const err=$('#errBox');
+    if(valid===0||totalUnits===0){
+      err.classList.add('show'); result.classList.remove('show'); return;
+    }
+    err.classList.remove('show');
+
+    const rawGwa = totalWeighted/totalUnits;
+    const gwaStd = (records.reduce((a,r)=>a+toStd(r.g,sch.type)*r.u,0))/totalUnits;
+
+    // Display GWA in the school's own scale
+    $('#gwaNum').textContent = rawGwa.toFixed(3);
+    $('#gwaModeLbl').textContent = (mode==='cumulative'?'Cumulative GWA':'Semester GWA')+' · '+sch.name.split('(')[0].trim();
+
+    // stats use std-equivalent for %, GPA, letter
+    $('#sPct').textContent = (sch.type==='deped'? Math.round(rawGwa) : stdToPercent(gwaStd))+'%';
+    $('#sGpa').textContent = stdToGpa(gwaStd);
+    $('#sLetter').textContent = stdToLetter(gwaStd);
+    $('#sUnits').textContent = totalUnits;
+
+    const h=honorFor(gwaStd, sch.id);
+    $('#honorWrap').innerHTML='<span class="honor '+h.cls+'">'+h.label+'</span>';
+
+    lastResult={sch:sch.name,mode,gwa:rawGwa.toFixed(3),units:totalUnits,
+      pct:$('#sPct').textContent,gpa:$('#sGpa').textContent,letter:$('#sLetter').textContent,
+      honor:h.label,records};
+
+    result.classList.add('show');
+    result.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+
+  /* ---------- CSV ---------- */
+  $('#csvBtn').addEventListener('click',()=>{
+    if(!lastResult) return;
+    let csv='Subject,Grade,Units\n';
+    lastResult.records.forEach(r=>{ csv+='"'+r.name+'",'+r.g+','+r.u+'\n'; });
+    csv+='\nGWA,'+lastResult.gwa+'\nPercentage,'+lastResult.pct+'\nGPA,'+lastResult.gpa+
+         '\nLetter,'+lastResult.letter+'\nTotal Units,'+lastResult.units+
+         '\nStatus,"'+lastResult.honor+'"\nSchool,"'+lastResult.sch+'"\n';
+    const blob=new Blob([csv],{type:'text/csv'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download='my-gwa.csv'; a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('CSV downloaded!');
+  });
+
+  /* ---------- Copy ---------- */
+  $('#copyBtn').addEventListener('click',()=>{
+    if(!lastResult) return;
+    const txt='My GWA: '+lastResult.gwa+' ('+lastResult.pct+', GPA '+lastResult.gpa+
+              ') — '+lastResult.honor+' · '+lastResult.units+' units';
+    navigator.clipboard.writeText(txt).then(()=>showToast('Copied!'))
+      .catch(()=>showToast('Copy failed'));
+  });
+
+  /* ---------- What-If simulator ---------- */
+  $('#wfBtn').addEventListener('click',()=>{
+    const cur=parseFloat($('#wfCurrent').value);
+    const ud=parseFloat($('#wfUnitsDone').value);
+    const tgt=parseFloat($('#wfTarget').value);
+    const ul=parseFloat($('#wfUnitsLeft').value);
+    const err=$('#wfErr'), out=$('#wfOut');
+    if([cur,ud,tgt,ul].some(v=>isNaN(v))||ud<=0||ul<=0){
+      err.classList.add('show'); out.classList.remove('show'); return;
+    }
+    err.classList.remove('show');
+    // target_total = tgt*(ud+ul); current_total = cur*ud; needed_points = target_total - current_total
+    const totalUnits=ud+ul;
+    const needed=(tgt*totalUnits - cur*ud)/ul;
+    $('#wfResult').textContent = needed.toFixed(3);
+    let verdict, color;
+    if(needed<1.00){ verdict='Even a perfect 1.00 average won\u2019t be enough — the target is out of reach with these units.'; color='var(--bad)'; }
+    else if(needed>5.00){ verdict='You\u2019ll reach your target even with poor grades — you\u2019re in great shape!'; color='var(--good)'; }
+    else if(needed<=1.50){ verdict='Tough but possible — you\u2019ll need near-excellent grades in every remaining subject.'; color='var(--warn)'; }
+    else if(needed<=2.00){ verdict='Realistic — solid grades across your remaining subjects will get you there.'; color='var(--good)'; }
+    else { verdict='Very achievable — even average grades will keep you on track.'; color='var(--good)'; }
+    $('#wfVerdict').textContent=verdict;
+    $('#wfVerdict').style.color=color;
+    out.classList.add('show');
+  });
+
+  /* ---------- Mode tabs ---------- */
+  $$('.tab').forEach(t=>{
+    t.addEventListener('click',()=>{
+      $$('.tab').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      mode=t.dataset.mode;
+      const isWf = mode==='whatif';
+      $('#panelWhatif').style.display = isWf?'block':'none';
+      $('#panelSubjects').style.display = isWf?'none':'block';
+      if(mode==='cumulative'){
+        $('#calc').querySelector('.lead').textContent='Enter every subject across all semesters (with units) for your true cumulative GWA.';
+      } else if(mode==='semester'){
+        $('#calc').querySelector('.lead').textContent='Enter your subjects, grades and units for this semester.';
+      }
+    });
+  });
+
+  /* ---------- Toast ---------- */
+  let toastTimer;
+  function showToast(msg){
+    const t=$('#toast'); t.textContent=msg; t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(()=>t.classList.remove('show'),2000);
+  }
+
+})();
+
+</script>
+</body>
+</html>
